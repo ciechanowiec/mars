@@ -28,7 +28,7 @@ public class DayData {
     private void dispatchTerrestrialDateRaw(String terrestrialDateRaw) {        
         LocalDate terrestrialDateISO = LocalDate.parse(terrestrialDateRaw
                                                        .replaceAll("(?<=\\d{4}-\\d{2}-\\d{2}).*", ""));
-                                                       /* Converts from "2022-02-02T00:00:00.000Z"
+                                                       /* Converts from "2022-02-02T00:00:00.000Z" (retrieved format)
                                                           to "2022-02-02" */
         DateTimeFormatter dateFullFormatter = DateTimeFormatter.ofPattern("d MMMM yyyy"); // "2 February 2022"
         DateTimeFormatter dateShortFormatter = DateTimeFormatter.ofPattern("MMM. d"); // "Feb. 2"
@@ -37,6 +37,10 @@ public class DayData {
     }
 
     private void setupSeason(String season) throws IllegalStateException {        
+        /* 1. Further assigned seasons are seasons in the southern hemisphere of Mars,
+              where Curiosity Rover is assigned.
+           2. More information on seasons and timekeeping on Mars:
+           https://en.wikipedia.org/wiki/Timekeeping_on_Mars#Definition_of_year_and_seasons */
         this.season = switch (season) {
             case "Month 1" -> "early autumn";
             case "Month 2" -> "middle autumn";

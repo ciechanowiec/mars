@@ -1,5 +1,4 @@
 com\logic\utils\DayData.class
 com\controller\Controller.class
 com\logic\utils\HTTPDriver.class
-com\Main.class
 com\logic\MainEngine.class

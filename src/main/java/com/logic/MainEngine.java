@@ -1,6 +1,5 @@
 package com.logic;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 import com.google.gson.JsonObject;
@@ -19,15 +18,7 @@ public class MainEngine {
         this.latestSixDaysData = new ArrayList<>();
         this.isDataAvailable = true;
         retrieveLatestSixDaysData();
-    }
-
-    public ArrayList<DayData> getLatestSixDaysData() {        
-        return this.latestSixDaysData;
-    }      
-    
-    public boolean isDataAvailable() {
-        return this.isDataAvailable;
-    }
+    }    
 
     private void retrieveLatestSixDaysData() {
         try {
@@ -68,6 +59,14 @@ public class MainEngine {
         } catch (Exception e) {
             throw new IllegalStateException("Failed to retrieve latest weather data.");
         }
+    }
+
+    public ArrayList<DayData> getLatestSixDaysData() {        
+        return this.latestSixDaysData;
+    }      
+    
+    public boolean isDataAvailable() {
+        return this.isDataAvailable;
     }
     
 }

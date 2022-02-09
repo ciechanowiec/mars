@@ -1,0 +1,1 @@
+This is a project file from https://nicepage.com/ - desktop version. This tool was used to build a site template.
